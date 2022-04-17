@@ -18,7 +18,7 @@ export default class BalanceFormatter{
         return output
     }
 
-    static prepareBalanceChangeString(change:string,percent:string,currencyType:CurrencyType){
+    static prepareBalanceChangeString(change:string,percent:string,currencyType:CurrencyType, usedFor: any){
         return `${change}${currencyType} ${percent}` // -> 562, 6$ (5,6%)
     }
 

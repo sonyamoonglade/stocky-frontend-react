@@ -11,11 +11,17 @@
   color: $greenPrimary ;
 }
 
-//.balance-change.personal-account,
-//.balance-change.list-view{
-//  font-size: 1.25rem;
-//
-//}
+.balance-change.for-list-view{
+  font-size: 1.125rem;
+  font-family: 'Roboto','sans-serif';
+}
+.balance-change-composed.for-list-view{
+  flex-direction: row;
+
+}
+.arrow-icon.for-list-view{
+  transform: translateY(2px);
+}
 
 .balance-change{
   cursor: pointer;

@@ -23,6 +23,6 @@ export interface BalanceChangeInterface {
     changePercentage: number
     changeNumeric: number
     isPositiveChange : boolean
-    usedFor: 'sidebar' | 'list-view' | 'personal-account'
+    usedFor: 'for-sidebar' | 'for-list-view' | 'for-personal-account'
 }
 

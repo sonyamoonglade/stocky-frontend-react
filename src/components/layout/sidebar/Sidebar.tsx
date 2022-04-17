@@ -22,7 +22,7 @@ const Sidebar = () => {
         currencyType: CurrencyType.US_DOLLAR,
         changeNumeric: 651.8,
         changePercentage: -5.9,
-        usedFor: 'sidebar'
+        usedFor: 'for-sidebar'
     }
 
     return (
@@ -53,8 +53,7 @@ const Sidebar = () => {
 
         <div className="personal-info-composed">
 
-            <BalanceChange
-                balanceChange={mockBalanceChange} />
+            {/*<BalanceChange balanceChange={mockBalanceChange} />*/}
             <div className="sidebar-avatar">
                 <Avatar className='sidebar-avatar-img' src={avatarUrl} boxSize={12}/>
             </div>

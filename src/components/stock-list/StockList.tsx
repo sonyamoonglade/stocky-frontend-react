@@ -2,10 +2,10 @@ import React from 'react';
 import './stock-list.scss'
 import StockItem from "./components/stock-item/StockItem";
 import {CurrencyType, StockItemInterface} from "../../shared/types/types";
+import NamedDivider from "../named-dividers/NamedDivider";
 
 
 const StockList = () => {
-    console.log('render list')
     const mockAppleStock:StockItemInterface = {
         isOwned: false,
         companyName: 'Apple',
@@ -22,9 +22,9 @@ const StockList = () => {
         companyName: 'Amazon',
         indexName: 'AMZN',
         percentageChange: 2.1,
-        numericChange: 672.1,
+        numericChange: 12.7,
         isPositiveChange: false,
-        currentPrice: 1812.1,
+        currentPrice: 74.6,
         currencyType: CurrencyType.US_DOLLAR
 
     }
@@ -40,10 +40,7 @@ const StockList = () => {
     }
     return (
         <>
-
-            <div className='stocks-title-divider'>
-                <p className='stocks-title'>Акции</p>
-            </div>
+            <NamedDivider name={'Акции'} />
             <ul className='stocks-list'>
                 <StockItem
                     stock={mockAppleStock}

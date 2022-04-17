@@ -5,6 +5,7 @@ import axios from "axios";
 import StringFormatter from "../../../../shared/services/StringFormatter";
 import {Avatar} from "@chakra-ui/react";
 import BalanceChange from "../../../layout/sidebar/components/balance-change/BalanceChange";
+import BalanceFormatter from "../../../../shared/services/BalanceFormatter";
 
 
 interface stockItemProps {
@@ -23,7 +24,8 @@ const StockItem:FC<stockItemProps> = ({stock}) => {
         percentageChange,
         companyName,
         isOwned,
-        amount
+        amount,
+        currencyType
     } = stock
 
     const [icon, setIcon] = useState<string>('')
@@ -33,7 +35,7 @@ const StockItem:FC<stockItemProps> = ({stock}) => {
         changePercentage: percentageChange,
         isPositiveChange: isPositiveChange,
         currencyType: CurrencyType.US_DOLLAR,
-        usedFor: 'list-view'
+        usedFor: 'for-list-view'
     }
 
     useEffect(  () => {
@@ -49,8 +51,12 @@ const StockItem:FC<stockItemProps> = ({stock}) => {
         getCompanyIcon()
 
     },[stock])
-    let amountOfStock;
 
+
+
+    const numericBalance = useMemo(() => {
+        return BalanceFormatter.formatNumericBalance(currentPrice)
+    },[numericChange])
 
     return (
         <li className='stock-item'>
@@ -68,14 +74,16 @@ const StockItem:FC<stockItemProps> = ({stock}) => {
                         {companyName}
                     </p>
                     <p className="subtitle">
-                        {isOwned ? amountOfStock : indexName }
+                        {isOwned ? ` ${amount!.toString() + 'шт'}` : indexName }
                     </p>
 
                 </div>
 
             </div>
-
             <div className="trailing">
+                <p className='current-stock-price'>
+                    {numericBalance} {currencyType}
+                </p>
                 <div className="balance-change">
                     <BalanceChange
                         balanceChange={mockBalanceChange} />

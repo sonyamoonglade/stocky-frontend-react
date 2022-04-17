@@ -58,14 +58,14 @@ const Header:FC = () => {
     return (
         <header>
             <div className="symbol-search">
-                <Icon as={BiSearch} boxSize={7} className='search-icon' color='gray.400'/>
+                <Icon as={BiSearch} boxSize={8} className='search-icon' color='gray.400'/>
                 <InputGroup >
                     <InputLeftAddon
                         onClick={handleInputClick}
                         children='Symbol:'
                         borderColor='gray.200'
                         fontFamily='Roboto'
-                        fontSize='1rem'
+                        fontSize='1.125rem'
                         cursor='default'
                     />
                     {/*@ts-ignore*/}
