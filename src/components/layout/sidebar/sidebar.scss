@@ -1,0 +1,92 @@
+@import "src/components/_variables.scss";
+
+
+.sidebar{
+  width: 5vw;
+  position: fixed;
+  background-color: $menuPrimaryColor ;
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.sidebar-logo-box{
+  width: fit-content;
+  display: flex;
+  padding: .3rem;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: .2rem;
+}
+
+.sidebar-logo-box:hover{
+  .company-logo{
+    transform: scale(103%)
+  }
+}
+
+.company-logo {
+  width: 57px;
+  height: 50px;
+  transition: transform .2s ease-in-out 0s;
+}
+
+.company-logo:hover{
+  transform: scale(104%);
+}
+
+
+
+.icon-list{
+  padding: 0 .5rem .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-icon{
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: all .2s ease-in-out 0s;
+}
+
+.sidebar-icon:hover{
+  transform:scale(104%);
+}
+
+
+.sidebar-avatar{
+  border-top: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.sidebar-avatar-img{
+  cursor: pointer;
+}
+
+.notification{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  top: 0;
+  right: 0;
+}
+
+.wallet{
+  position: relative;
+}
+
+.bg-green{
+  background-color: $greenPrimary;
+}
+.bg-red{
+  background-color: $redPrimary;
+}

@@ -1,0 +1,17 @@
+
+
+.dash{
+  display: flex;
+  position: relative;
+}
+
+.main-container{
+  position: absolute;
+  top: 7vh;
+  left: 5vw;
+  width: calc(100% - 5vw);
+  height: calc(100% - 7vh);
+  //padding: 1rem;
+
+
+}

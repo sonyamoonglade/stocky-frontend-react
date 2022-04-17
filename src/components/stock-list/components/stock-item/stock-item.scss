@@ -1,0 +1,35 @@
+@import "src/components/_variables.scss";
+
+.stock-item{
+  display: flex;
+  font-family: 'Roboto', serif;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray400;
+}
+.leading{
+  display: flex;
+  align-items: center;
+}
+.subtitle{
+  font-size: 1rem;
+  color: $gray400;
+  cursor: default;
+  line-height: .5rem;
+}
+.company-name{
+  cursor: default;
+  font-size: 2rem;
+}
+.info{
+  transform: translateY(-4px);
+  display: flex;
+  flex-direction: column;
+  //align-items:center;
+  justify-content: center;
+  margin-left: 1rem;
+  width: 100%;
+  height: inherit;
+}
+
