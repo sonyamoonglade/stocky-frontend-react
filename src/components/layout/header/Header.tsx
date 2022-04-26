@@ -17,10 +17,6 @@ const Header:FC = () => {
 
     const isAuthenticated = false
 
-    // const userFullnamePlaceholder: string | undefined = useMemo(() => {
-    //     if(!isAuthenticated) return RandomUsernameGenerator.generateRandomInvestorName()
-    //     return;
-    // },[isAuthenticated])
     const userFullnamePlaceholder = RandomUsernameGenerator.generateRandomInvestorName()
 
     function inputChangeHandler(e:any): void{

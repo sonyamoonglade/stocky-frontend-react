@@ -38,19 +38,26 @@ const StockList = () => {
         currentPrice: 761.28,
         currencyType: CurrencyType.US_DOLLAR
     }
+    const mockSamsung:StockItemInterface = {
+        isOwned: false,
+        isPositiveChange: true,
+        numericChange: 200.59,
+        currencyType: CurrencyType.US_DOLLAR,
+        currentPrice: 100,
+        indexName: 'KRW',
+        companyName: 'Samsung',
+        percentageChange: 5.6
+    }
+
+    const assetArray: StockItemInterface[] = [mockSamsung,mockAmazonStock,mockAppleStock,mockMicrosoftStock]
+
     return (
         <>
             <NamedDivider name={'Акции'} />
             <ul className='stocks-list'>
-                <StockItem
-                    stock={mockAppleStock}
-                />
-                <StockItem
-                    stock={mockAmazonStock}
-                />
-                <StockItem
-                    stock={mockMicrosoftStock}
-                />
+                {assetArray.map(asset => (
+                    <StockItem stock={asset} />
+                ))}
             </ul>
         </>
 
