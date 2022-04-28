@@ -5,7 +5,11 @@ import {BiLogIn, BiLogOut, BiSearch} from "react-icons/bi";
 import "./header.scss"
 import RandomUsernameGenerator from "../../../shared/services/RandomUsernameGenerator";
 
-const Header:FC = () => {
+interface headerProps {
+    symbolSearchOn?: boolean
+}
+
+const Header:FC<headerProps> = ({symbolSearchOn = true}) => {
 
     const inputRef = useRef<HTMLInputElement >(null)
 
@@ -52,28 +56,30 @@ const Header:FC = () => {
 
 
     return (
-        <header>
-            <div className="symbol-search">
-                <Icon as={BiSearch} boxSize={8} className='search-icon' color='gray.400'/>
-                <InputGroup >
-                    <InputLeftAddon
-                        onClick={handleInputClick}
-                        children='Symbol:'
-                        borderColor='gray.200'
-                        fontFamily='Roboto'
-                        fontSize='1.125rem'
-                        cursor='default'
-                    />
-                    {/*@ts-ignore*/}
-                    <input ref={inputRef}
-                           onChange={inputChangeHandler}
-                           value={symbol}
-                           className='symbol-input'
-                           placeholder='MSFT'
-                           onKeyDown={keyPressHandler}
-                    />
-                </InputGroup>
-            </div>
+        <header className={!symbolSearchOn ? 'searchOff' : ''}>
+            {symbolSearchOn &&
+                <div className="symbol-search">
+                    <Icon as={BiSearch} boxSize={8} className='search-icon' color='gray.400'/>
+                    <InputGroup >
+                        <InputLeftAddon
+                            onClick={handleInputClick}
+                            children='Symbol:'
+                            borderColor='gray.200'
+                            fontFamily='Roboto'
+                            fontSize='1.125rem'
+                            cursor='default'
+                        />
+                        {/*@ts-ignore*/}
+                        <input ref={inputRef}
+                               onChange={inputChangeHandler}
+                               value={symbol}
+                               className='symbol-input'
+                               placeholder='MSFT'
+                               onKeyDown={keyPressHandler}
+                        />
+                    </InputGroup>
+                </div>
+            }
 
             <div className="header-rest">
                 <p className={isAuthenticated ? "user-fullname border-green" : "user-fullname border-red"}>

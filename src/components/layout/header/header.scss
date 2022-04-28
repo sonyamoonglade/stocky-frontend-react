@@ -13,6 +13,14 @@ header{
   box-shadow: 0px 1px 1px $gray100;
 }
 
+header.searchOff {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  left: 0;
+  width: 100%;
+}
+
 .symbol-search{
   display: flex;
   align-items: center;

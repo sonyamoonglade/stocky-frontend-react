@@ -1,0 +1,26 @@
+
+@import "src/components/_variables.scss";
+
+
+.input-group{
+  padding-left: 1rem;
+}
+
+.input-group label{
+  display: flex;
+  padding: .2rem;
+}
+.input-addon{
+  padding: .2rem;
+  width: 5rem;
+  text-align: left;
+  border-bottom: 1px solid $gray300;
+
+}
+.input-group input{
+  width: 81%;
+  outline: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid $gray300;
+}

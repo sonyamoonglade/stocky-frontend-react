@@ -1,0 +1,89 @@
+
+@import "src/components/_variables.scss";
+
+
+.tracking-list{
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+.tracking-box{
+  width: 45px;
+  margin-bottom: 5px;
+  border-radius: 7px;
+  aspect-ratio: 1 /1 ;
+  background-color: darkgray;
+  //z-index: 50;
+}
+
+
+.tracking-title{
+  text-align: center;
+  font-size: 15px;
+}
+
+.track{
+  list-style: none;
+  display: flex;
+  width: 80px;
+  flex-direction: column;
+  align-items: center;
+
+}
+.password-track{
+  //display: block;
+}
+
+
+.tracking-number{
+  width: 100%;
+
+  height: 100%;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tracking-list li{
+  position: relative;
+
+}
+.tracking-list li:after{
+  content: '';
+  background-color: darkgray;
+  height: 2px;
+  width: 150px;
+  position: absolute;
+  top: 24%;
+  z-index: -1;
+  left: -130%;
+  @media (max-width: 1600px) {
+    left: -110%;
+  }
+  @media(max-width: 1400px){
+    width: 100px;
+    left: -70%;
+  }
+  @media(max-width: 960px){
+    width: 70px;
+    left: -60%;
+  }
+}
+
+.tracking-list li:first-of-type:after{
+  display: none;
+
+  background-color: green;
+}
+
+
+
+
+.track-line.first{
+  background-color: red;
+}

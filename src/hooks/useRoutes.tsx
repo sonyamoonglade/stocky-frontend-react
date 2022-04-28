@@ -4,6 +4,7 @@ import Login from "../components/authentication/login/Login";
 import StockList from "../components/stock-list/StockList";
 import Layout from "../components/layout/Layout";
 import React from "react";
+import FormLayout from "../components/authentication/formLayout/FormLayout";
 
 
 export const useRoutes = (isAuthenticated: boolean | null) => {
@@ -28,13 +29,13 @@ export const useRoutes = (isAuthenticated: boolean | null) => {
                 </Routes>
             </Layout>
         }else
-          return <>
+          return <FormLayout>
                 <Routes>
                     <Route path={'/login'} element={<Login />}  />
                     <Route path={'/register'} element={<Register />}  />
                     <Route path={'*'} element={<Navigate to={'/dashboard'} />}  />
                 </Routes>
-            </>
+            </FormLayout>
 
     }
 

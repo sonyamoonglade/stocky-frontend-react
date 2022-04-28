@@ -15,7 +15,7 @@ const Layout:FC<layoutProps> = (props) => {
             <div className="container">
                 <div className="dash">
                     <Sidebar />
-                    <Header />
+                    <Header  />
                 </div>
                 <main className='main-container'>
                     {props.children}
