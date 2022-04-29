@@ -1,7 +1,7 @@
 import React, {FC, useMemo, useRef, useState} from 'react';
 import {Icon, InputGroup, InputLeftAddon} from "@chakra-ui/react";
 import {BiLogIn, BiLogOut, BiSearch} from "react-icons/bi";
-
+import {NavigateFunction, useNavigate} from 'react-router-dom';
 import "./header.scss"
 import RandomUsernameGenerator from "../../../shared/services/RandomUsernameGenerator";
 
@@ -14,6 +14,8 @@ const Header:FC<headerProps> = ({symbolSearchOn = true}) => {
     const inputRef = useRef<HTMLInputElement >(null)
 
     const [symbol,setSymbol] = useState<string>('')
+
+    const navigate:NavigateFunction = useNavigate()
 
     const avatarUrl:string = 'https://external-preview.redd.it/fBai3DKZrSGf3YRd89f9pUHJua_lyGNS3LF0I-joA8Y.jpg?auto=webp&s=a2792118a8b080350240abc745d3ca6e53f18ca1'
 
@@ -52,6 +54,13 @@ const Header:FC<headerProps> = ({symbolSearchOn = true}) => {
         return inputRef.current!.focus()
     }
 
+    function navigateToLogin(){
+        navigate('/login')
+    }
+
+    function logout(){
+
+    }
 
 
 
@@ -90,8 +99,8 @@ const Header:FC<headerProps> = ({symbolSearchOn = true}) => {
                     }
                 </p>
                 {isAuthenticated ?
-                    <Icon as={BiLogOut} boxSize={7} color='gray.700' className='logout-icon' /> :
-                    <Icon as={BiLogIn} boxSize={7} color='gray.700' className='logout-icon'/>
+                    <Icon as={BiLogOut} onClick={logout} boxSize={7} color='gray.700' className='logout-icon' /> :
+                    <Icon as={BiLogIn} onClick={navigateToLogin}  boxSize={7} color='gray.700' className='logout-icon'/>
                 }
             </div>
 

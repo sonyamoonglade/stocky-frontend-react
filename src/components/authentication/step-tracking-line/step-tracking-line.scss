@@ -57,7 +57,7 @@
   content: '';
   background-color: darkgray;
   height: 2px;
-  width: 150px;
+  width: 80px;
   position: absolute;
   top: 24%;
   z-index: -1;
@@ -77,11 +77,15 @@
 
 .tracking-list li:first-of-type:after{
   display: none;
-
-  background-color: green;
 }
 
-
+// active class
+.tracking-list li.active:after{
+  background-color: red;
+}
+.tracking-box.active{
+  background-color: green;
+}
 
 
 .track-line.first{

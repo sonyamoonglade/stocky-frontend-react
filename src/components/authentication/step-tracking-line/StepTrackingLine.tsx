@@ -9,8 +9,8 @@ interface stepTrackingLineProps {
 const StepTrackingLine:FC<stepTrackingLineProps> = ({currentStep}) => {
     return (
         <ul className='tracking-list'>
-                <li className="personal-information-track track">
-                    <div className="tracking-box">
+                <li className="personal-information-track track active">
+                    <div className="tracking-box active">
                         <p className="tracking-number">1</p>
                     </div>
                     <p className="tracking-title">Personal <br/> Information</p>

@@ -5,10 +5,26 @@ import StepTrackingLine from "../step-tracking-line/StepTrackingLine";
 import InputGroup from "../input-group/InputGroup";
 import {Box, Spacer} from "@chakra-ui/react";
 import {Link} from "react-router-dom";
+import PersonalInformationForm from "../formsByStep/PersonalInformationForm";
+import PasswordForm from "../formsByStep/PasswordForm";
+import BrokerAccountForm from "../formsByStep/BrokerAccountForm";
 
 const Register = () => {
 
     const [formState, setFormState] = useState(1)
+
+    function incrementFormStep(){
+        if(formState < 3){
+            setFormState(prev => prev + 1)
+        }
+        console.log(formState)
+    }
+    function decrementFormStep(){
+        if(formState > 1){
+            setFormState(prev => prev - 1)
+        }
+        console.log(formState)
+    }
 
     return (
         <div className='register auth-card'>
@@ -27,42 +43,24 @@ const Register = () => {
                 </p>
                 </span>
                 <StepTrackingLine currentStep={1} />
-                <form >
-                    <InputGroup
-                        type={'email'}
-                        placeholder={'example@mail.com'}
-                        isRequired={true}
-                        id={'email'}
-                        inputAddonText={'Email'}
-                    />
-                    <Box h={4} />
-                    <InputGroup
-                        type={'text'}
-                        placeholder={'Ivan'}
-                        isRequired={true}
-                        id={'firstname'}
-                        inputAddonText={'Firstname'}
-                    />
-                    <Box h={4} />
-                    <InputGroup
-                        type={'text'}
-                        placeholder={'Ivanov'}
-                        isRequired={true}
-                        id={'lastname'}
-                        inputAddonText={'Lastname'}
-                    />
-                    <Box h={4} />
-                    <InputGroup
-                        type={'date'}
-                        placeholder={''}
-                        isRequired={true}
-                        id={'date'}
-                        inputAddonText={'Birthdate'}
+                {
+                    formState == 1 ?
+                    <PersonalInformationForm
+                        incrementFormStep={incrementFormStep}
+                        decrementFormStep={null}
+                    /> :
+                    formState == 2 ?
+                    <PasswordForm
+                        decrementFormStep={decrementFormStep}
+                        incrementFormStep={incrementFormStep}
+                    /> :
+                    <BrokerAccountForm
+                        incrementFormStep={incrementFormStep}
+                        decrementFormStep={decrementFormStep}
                     />
 
+                }
 
-
-                </form>
             </div>
 
         </div>

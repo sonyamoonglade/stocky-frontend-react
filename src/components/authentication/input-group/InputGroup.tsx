@@ -20,7 +20,7 @@ const InputGroup:FC<inputGroupProps> = ({
             <label  htmlFor={type}>
                 <p className='input-addon'>{inputAddonText}</p>
                 <input
-                    style={type == 'date' ? {paddingRight:'50%'} : undefined}
+                    style={type == 'date' ? {paddingRight:'30'} : undefined}
                     onBlur={(e:any) => e.target.placeholder = placeholder}
                     onClick={(e: any) => e.target.placeholder =''}
                     placeholder={placeholder}

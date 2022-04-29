@@ -3,6 +3,10 @@ import './form-layout.scss'
 import {ReactJSXElement} from "@emotion/react/types/jsx-namespace";
 import Header from "../../layout/header/Header";
 
+export interface stepFormProps{
+    incrementFormStep: Function | null
+    decrementFormStep: Function | null
+}
 
 interface formLayoutProps {
     children: ReactJSXElement[] | ReactJSXElement
