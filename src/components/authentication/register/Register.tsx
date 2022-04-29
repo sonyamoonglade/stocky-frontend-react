@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import './register.scss'
 import '../authentication.scss'
 import StepTrackingLine from "../step-tracking-line/StepTrackingLine";
-import InputGroup from "../input-group/InputGroup";
-import {Box, Spacer} from "@chakra-ui/react";
 import {Link} from "react-router-dom";
 import PersonalInformationForm from "../formsByStep/PersonalInformationForm";
 import PasswordForm from "../formsByStep/PasswordForm";
@@ -17,14 +15,20 @@ const Register = () => {
         if(formState < 3){
             setFormState(prev => prev + 1)
         }
-        console.log(formState)
     }
     function decrementFormStep(){
         if(formState > 1){
             setFormState(prev => prev - 1)
         }
-        console.log(formState)
     }
+
+    function completeRegistration(){
+        if(formState === 3){
+            setFormState(prev => 4)
+        }
+    }
+
+    console.log(formState)
 
     return (
         <div className='register auth-card'>
@@ -42,21 +46,20 @@ const Register = () => {
 
                 </p>
                 </span>
-                <StepTrackingLine currentStep={1} />
+                <StepTrackingLine currentStep={formState} />
                 {
                     formState == 1 ?
                     <PersonalInformationForm
                         incrementFormStep={incrementFormStep}
-                        decrementFormStep={null}
                     /> :
                     formState == 2 ?
                     <PasswordForm
-                        decrementFormStep={decrementFormStep}
                         incrementFormStep={incrementFormStep}
+                        decrementFormStep={decrementFormStep}
                     /> :
                     <BrokerAccountForm
-                        incrementFormStep={incrementFormStep}
                         decrementFormStep={decrementFormStep}
+                        completeRegistration={completeRegistration}
                     />
 
                 }

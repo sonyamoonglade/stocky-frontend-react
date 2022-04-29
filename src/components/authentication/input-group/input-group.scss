@@ -7,8 +7,17 @@
   padding-right: 2rem;
 }
 
+.pass-show{
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  top: 20%;
+}
+
 .input-group label{
   display: flex;
+  position: relative;
+
   padding: .2rem;
 }
 .input-addon{
